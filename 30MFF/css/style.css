@@ -4,13 +4,15 @@
     max-width: 500px; 
 }
 
-.site-footer .row {
-    margin-top: 20px; 
+div.scroll-container {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  padding: 10px;
 }
 
-.copyright-text {
-    margin-bottom: 2px; 
+div.scroll-container img {
+  padding: 10px;
 }
-
 
 
