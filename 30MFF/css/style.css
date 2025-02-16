@@ -3,7 +3,7 @@
 .small-video {
     max-width: 500px; 
 }
-
+/*<!-- for scrolling interactivity -->*/
 div.scroll-container {
   background-color: #333;
   overflow: auto;
