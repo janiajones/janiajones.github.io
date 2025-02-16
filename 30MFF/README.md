@@ -1,1 +1,14 @@
-## Hello
+# Imagine waking up in a new place with NO ONE around
+## 30MFF - Jania Jones Comms Lab Spring '25
+---------------------------------------------------------
+1. **Project Description:** What is the project, overall concept and theme? What kind of experience you were striving to create?
+For our 30 minute film festival website, I really wanted to utilizie the theme of feeling lost to translate a universal 'coming of age experience.' Given that we are all are, or once were college students (and at an international university), I felt that this was a universally relatable experience and could be interpreted in numerous ways depending on an individual's experience. Thus, I wanted the audience to feel seen or understood when interacting with my website because it takes a somewhat serious or scary experience, and makes it more light hearted and simple which kind of gives us a chance to "rewrite" whatever our previous experiences may have actually been. 
+
+2. **Process:** How did you go about implementing the concept?
+In terms on actualy implementing this concept, I spent a large amount of time brainstorming and reworking in order to have this final product. For starters, this is the first website I built so I wasn't aware of the complexities behind design a website with flow and proper aesthetics. Therefore, I once I actually started coding I decided to go with an online template. Although I already intended to make significant changes to the template, I still wanted to find something that followed the overall vibe of my story. Thus, I thought this template would suffice because the color scheme was playful yet still had what felt like a mysterious or sad underlying tone. 
+
+From there, I originally tried to mimic my wireframe but ultimately deciding to scrap that once I realized the limitations of my original design. My main focus became conveying the story I wanted users to experience. I thought a simple "choose your own adventure" concept would help cater to more creativity and interactivty on the users part. This way, I was able to implement both ideas from my design process while still keeping it simple enough to be feasible. 
+
+3. **Reflection/Evaluation:** Were your expectations and goals met in the process of building the final working version?
+I think overall I did meet my expectations when looking at my final product. In working with a template I felt unsure as to whether or not I would make enough changes to make this work truly feel like my own but ultimately, I feel like it does. Not only have a gained a strong understanding of the code I worked with and different technqiues to use when working with html and css, but I maintained the story I wanted to convey and produced something I am proud of. In terms of future developments, I would love to add even more to the "choose your own adventure" storyline. Like in the film when Deema makes her way to the dining hall, we don't really know what happens next so I think incorporating something more so that users can truly write their own stories would be interesting. 
+
