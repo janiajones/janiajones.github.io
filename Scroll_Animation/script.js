@@ -33,7 +33,7 @@ function scrollPage(){
 
 // An array of stories as strings
 let stories = [  
-    'This is the story of how a cat bread like find\'s a home!',  
+    'This is the story of how a cat bread like me finds a home!',  
     'I was once just a lump of dough, dreaming of warmth.',  
     'A little kneading, with some extra love and here I am!',  
     'Take me home, and I will be your purrfect pet loaf forever!'  
