@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scroll Animation - JJones</title>
+	<link href="style.css" rel="stylesheet">
+</head>
+<body>
+	<!-- Navigation bar -->
+	<div id="nav">
+		<!-- link to divs on the same page using their id names -->
+		<a href="#bakery"><div class="nav-btn" id="first-page"></div></a>
+		<a href="#first-text"><div class="nav-btn" id="second-page"></div></a>
+		<a href="#adoption"><div class="nav-btn" id="third-page"></div></a>
+		<a href="#second-text"><div class="nav-btn" id="fourth-page"></div></a>
+	</div>
+	<!-- 
+	Four full browser size sections:
+	1. Bakery Scene 
+	2. Text section
+	3. Adoption Scene
+	4. Text section
+	 -->
+	<div id="bakery">
+		<!-- Content to display inside the bakery div -->
+		<div id="flower-div">
+			<span id="flower-text">Welcome to the bakery adoption center!</span>
+			<img id="flower" src="img/tinycat.png">
+		</div>
+	</div>
+	<div id="first-text" class="text-section">
+		<p class="text"> At the bakery adoption center, the scent of warm dough and a hint of clever mischief fill the air as freshly baked cat breads lounge around, meticulously making biscuits for their visitors. Choosing one is a careful process... some are golden and toasty, others soft and doughy!</p>
+	</div>
+	<div id="adoption">
+		<!-- Content to display inside the ocean div -->
+		<div id="hat-div">
+			<img id="hat" src="img/hat.png">
+			<span id="hat-text">Us kitties like to think of ourselves like little pastry asssitants, caring for younger kittens.</span>
+		</div>
+	</div>
+	<div id="second-text" class="text-section">
+		<p class="text"><br>Our baker-adoption specialists help match each new parent with the perfect cat bread, ensuring their flavor is just right. Once selected, the loving loaf is wrapped up in their little basket, and ready to head home!
+		</p>
+	</div>
+	<!-- Cat div position is fixed on the bottom left corner of the web page -->
+	<div id="cat-div"> 
+		<span id="cat-text">This is the story of how a cat bread like find's a home!</span>
+		<img id="cat" src="img/cat.png">
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>

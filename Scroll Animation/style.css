@@ -1,0 +1,155 @@
+html{
+	/* Set height of the html page to 100% of the browser height */
+	height: 100%;
+	/* Hide horizontal scroll */
+	overflow-x: hidden;
+	font-family: 'Times New Roman';
+}
+
+body{
+	/* Set height of the body to 100% -- separated out of html to allow scrollTo animation */
+	height: 100%;
+	margin: 0px;
+}
+
+/* 
+Navigation Bar 
+*/
+#nav{
+	/* Fix navigation bar at the top middle of the web page */
+    position: fixed;
+    /* calc() CSS function calculates numbers of different units */
+    left: calc(50% - 50px);
+    top: 20px;
+    /* Display nav bar on top of everything else */
+    z-index: 1;
+}
+
+.nav-btn{
+	width: 20px;
+    height: 20px;
+    /* Make square div into a circle */
+    border-radius: 50%;
+    background-color: white;
+    display: inline-block;
+    cursor: pointer;
+    /* transition changes in background-color */
+    transition: background-color 0.5s;
+}
+
+/* When a nav-btn is hovered on, set background-color to black */
+.nav-btn:hover{
+	background-color: #e4a608;
+}
+
+/* 
+Cat Div
+*/
+#cat-div{
+	/* Fix cat div in the bottom left corner of the web page */
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 300px;
+	text-align: center;
+}
+
+#cat{
+	width: 300px;
+}
+
+#cat-text{
+	color: white;
+	background-color: #e4a608;
+	font-size: 32px;
+	margin-top: 0; /* Remove any top margin */
+	padding-top: 0; /* Remove any padding at the top */
+}
+
+/* 
+Parallax: Mountain and Ocean sections;
+*/
+#bakery, #adoption{
+	/* Set height of div to 100% */
+	height: 100%;
+	/* The bottom three background CSS settings create parallax effect */
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
+}
+
+#bakery{
+	/* Set background image of bakery section using url() function */
+	background-image: url('img/adoption.webp');
+}
+
+#adoption{
+	/* Set background image of ocean section using url() function */
+	background-image: url('img/adoption(2).webp');
+}
+
+/* 
+Flower div inside bakery section
+*/
+#flower-div{
+    position: relative;
+    width: 150px;
+    text-align: center;
+    top: calc(100% - 300px);
+    left: calc(50% - 75px);
+}
+
+#flower{
+	width: 100px;
+	margin-top: 25px;
+}
+
+#flower-text {
+    color: white;
+    background-color: #e4a608; 
+    font-size: 20px;
+}
+
+/* 
+Hat div inside Ocean section
+*/
+#hat-div {
+    position: relative;
+    width: 180px;
+    text-align: center;
+    left: calc(50% - 90px);
+}
+
+#hat-text {
+    color: white;
+    background: #e4a608;
+    margin-top: 20px; /* Add space between the image and the text */
+}
+
+#hat {
+    width: 120px; /* Make the image larger */
+    display: block;
+    margin: auto;
+    transform: rotate(-10deg);
+    margin-bottom: 20px; /* Add space below the image */
+}
+
+
+/* 
+Text sections 
+*/
+.text-section {
+	/* Align text to the top of the page */
+	height: 100%;
+	color: white; 
+	font-size: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start; /* Aligns text to the top */
+	background: #b83000;
+	padding-top: 20px;
+}
+
+.text{
+	width: 70%;
+}
