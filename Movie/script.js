@@ -80,18 +80,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Random position for the popup
     if (popupCount === 0) {
-      randomTop = (window.innerHeight - popup.offsetHeight) / 2; // Center vertically
-      randomLeft = (window.innerWidth - popup.offsetWidth) / 2; // Center horizontally
+      randomTop = (window.innerHeight - popup.offsetHeight) / 2; 
+      randomLeft = (window.innerWidth - popup.offsetWidth) / 2; 
       popup.style.top = randomTop + 'px'; // Set the random top position
       popup.style.left = randomLeft + 'px';
     } else {
-      const maxWidth = window.innerWidth - popup.offsetWidth - 200; // Prevent overflow on the right
-      const maxHeight = window.innerHeight - popup.offsetHeight - 150; // Prevent overflow on the bottom
-      const randomTop = Math.floor(Math.random() * maxHeight); // Random top position
-      const randomLeft = Math.floor(Math.random() * maxWidth); // Random left position
+      const maxWidth = window.innerWidth - popup.offsetWidth - 200; 
+      const maxHeight = window.innerHeight - popup.offsetHeight - 150; 
+      const randomTop = Math.floor(Math.random() * maxHeight); 
+      const randomLeft = Math.floor(Math.random() * maxWidth); 
       popup.style.position = 'absolute';
-      popup.style.top = randomTop + 'px'; // Set the random top position
-      popup.style.left = randomLeft + 'px'; // Set the random left position
+      popup.style.top = randomTop + 'px'; 
+      popup.style.left = randomLeft + 'px'; 
     }
 
     // Add the popup to the body of the document
@@ -127,26 +127,24 @@ document.addEventListener('DOMContentLoaded', function () {
     popupCount++; // Increment the popup counter after the first one
   }
 
-  // Button click toggle for homepage navigation
   const button = document.querySelector('.button');
-  button.addEventListener('click', function() {
-    this.classList.toggle('success');
-    const before = this.querySelector('.icon-alien');
-    const after = this.querySelector('.icon-space');
-    
-    if (this.classList.contains('success')) {
-      before.style.display = 'none'; // Hide Alien icon
-      after.style.display = 'inline-block'; // Show Spaceship icon
+  if (button) {
+    button.addEventListener('click', function () {
+      this.classList.toggle('success');
+      const before = this.querySelector('.icon-alien');
+      const after  = this.querySelector('.icon-space');
 
-      // Delay the navigation to the new page
-      setTimeout(function() {
-        window.location.href = 'page2.html'; // Redirect after a delay
-      }, 1000); // Delay in milliseconds (1000ms = 1 second)
-    } else {
-      before.style.display = 'inline-block'; // Show Alien icon
-      after.style.display = 'none'; // Hide Spaceship icon
-    }
-  });
+      if (this.classList.contains('success')) {
+        before.style.display = 'none';
+        after.style.display  = 'inline-block';
+
+        setTimeout(() => window.location.href = 'page2.html', 1000);
+      } else {
+        before.style.display = 'inline-block';
+        after.style.display  = 'none';
+      }
+    });
+  }
 
   const english  = "How to be Human:\nUniversity Student Edition";
   const glyphs   = "⊑⍜⍙ ⏁⍜ ⏚⟒ ⏃ ⊑⎍⋔⏃⋏:\n⎍⋏⟟⎐⟒⍀⌇⟟⏁⊬ ⌇⏁⎍⎅⟒⋏⏁ ⟒⎅⟟⏁⟟⍜⋏";
@@ -174,6 +172,4 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
   update();
-
-
 });

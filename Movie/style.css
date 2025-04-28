@@ -1,4 +1,4 @@
-/* ---------- layout & backdrop ---------- */
+/*  layout & backdrop  */
 html, body{
   margin:0;
   height:100%;
@@ -17,10 +17,10 @@ body::before{
   z-index:-1;
 }
 
-/* ---------- title ---------- */
+/* importing alien font */
 @font-face {
   font-family: 'Alien 3';
-  src: url('Alien.ttf') format('truetype'); /* Make sure the path is correct */
+  src: url('Alien.ttf') format('truetype'); 
   font-weight: normal;
   font-style: normal;
 }
@@ -34,20 +34,20 @@ body{
   text-align:center;
   text-shadow:0 0 8px #000;
   white-space:pre-wrap;
-  margin-bottom:10rem; /* Move title up */
+  margin-bottom:10rem; 
 }
 
 /* Button Styles */
 .button {
   display: block;
-  background-color: #27ae60; /* Changed to green */
-  width: 250px; /* Made button smaller */
-  height: 80px; /* Made button smaller */
+  background-color: #27ae60; 
+  width: 250px; 
+  height: 80px; 
   line-height: 80px;
   margin: auto;
   color: #fff;
   position: absolute;
-  top: 60%; /* Moved button down */
+  top: 60%; 
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
@@ -69,7 +69,7 @@ body{
 .button span {
   width: 72%;
   line-height: inherit;
-  font-size: 14px; /* Slightly smaller font */
+  font-size: 14px; 
   text-transform: uppercase;
   left: 0;
   transition: all 0.25s cubic-bezier(0.310, -0.105, 0.430, 1.400);
@@ -77,7 +77,7 @@ body{
 
 .button span:after {
   content: '';
-  background-color: #800080; /* Changed to purple */
+  background-color: #800080; 
   width: 2px;
   height: 70%;
   position: absolute;
@@ -91,10 +91,9 @@ body{
   transition: all 0.25s cubic-bezier(0.310, -0.105, 0.430, 1.400);
 }
 
-/* Button hover and success states */
 .button.success,
 .button:hover {
-  background-color: #800080; /* After color changed to purple */
+  background-color: #800080; 
 }
 
 .button.success span {
@@ -103,10 +102,10 @@ body{
 }
 
 .button .icon img {
-  width: 40px;  /* Set a fixed width */
-  height: auto; /* Maintain the aspect ratio */
-  max-width: 100%; /* Ensure the images never exceed the button's width */
-  max-height: 100%; /* Ensure the images never exceed the button's height */
+  width: 40px;  
+  height: auto; 
+  max-width: 100%; 
+  max-height: 100%; 
   margin-top: 20px;
    margin-left: 20px;
 }
@@ -154,8 +153,8 @@ body{
 }
 
 .message {
-  font-size: 20px; /* Make font size larger */
-  color: black; /* Change font color to Tomato (you can change this to any color you prefer) */
+  font-size: 20px; 
+  color: black; 
 }
 .icon {
   width: 32px;
@@ -167,7 +166,6 @@ body{
   text-align: center;
 }
 
-/* CSS */
 .button-14 {
   background-image: linear-gradient(#f7f8fa ,#e7e9ec);
   border-color: #adb1b8 #a2a6ac #8d9096;
@@ -203,4 +201,9 @@ body{
   outline: 0;
 }
 
-
+body {
+  background: #333;
+  padding-top: 5em;
+  display: flex;
+  justify-content: center;
+}

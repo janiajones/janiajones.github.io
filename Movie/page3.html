@@ -1,15 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>How to be Human</title>
-  <link rel="stylesheet" href="style.css"> <!-- Link to external CSS file -->
+  <style>
+    @font-face {
+    font-family: 'Alien 3';
+    src: url('Alien.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+    }
+    .video-section {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      background-image: url('space.jpg');
+    }
+    .background-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.2); 
+      transform-origin: center center; 
+
+    }
+    .content {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #000;
+    }
+    .center {
+      width: 1000px;
+      height: 562.5px;
+      border: none;
+    }
+
+    .quiz-section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('space.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .widget-wrap {
+      width: 600px;
+      padding: 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 32px rgba(0,0,0,0.1);
+    }
+    #quizWrap {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #quizQn {
+      padding: 20px;
+      font-family: 'Alien 3', sans-serif;
+      background: #674ea7;
+      color: #fff;
+      font-size: 24px;
+      border-radius: 10px;
+    }
+    #quizAns {
+      margin: 10px 0;
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-gap: 10px;
+    }
+    #quizAns input[type=radio] {
+      display: none;
+    }
+    #quizAns label {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      font-family: 'Alien 3', sans-serif;
+      padding: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.3s, border 0.3s;
+    }
+    #quizAns label.correct {
+      background: #d8ffc4;
+      border: 1px solid #60a03f;
+    }
+    #quizAns label.wrong {
+      background: #ffe8e8;
+      border: 1px solid #c78181;
+    }
+
+  </style>
 </head>
 <body>
-  <video id="myVideo" width="100%" height="100%" controls autoplay>
-  <source src="warp.MOV" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
-  <script src="script.js"></script>
+  <!-- Full-screen section displaying the intro MP4 video -->
+  <section class="video-section">
+    <video 
+      id="intro" 
+      class="background-video" 
+      autoplay 
+      muted 
+      playsinline
+    >
+      <source src="spacevideo.mp4" type="video/mp4">
+    </video>
+  </section>
+  
+  <!-- Full-screen section displaying the embedded YouTube video -->
+  <section class="content" id="videoSection">
+    <iframe
+      class="center"
+      src="https://www.youtube.com/embed/5qKRieyjat0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </section>
+
+  <!-- Full-screen section displaying the multiple choice quiz -->
+    <section class="quiz-section">
+    <div class="widget-wrap">
+      <div id="quizWrap"></div>
+    </div>
+  </section>
+
+  <script>
+    // Listen for the end of the intro video and scroll to the YouTube section
+    const introVideo = document.getElementById('intro');
+    introVideo.addEventListener('ended', () => {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth'
+      });
+    });
+
+    
+    var quiz = {
+      data: [
+        {
+          q: "Now let's see if you were paying attention. What is the thing you should NOT do as a human college student?",
+          o: [
+            "Call your parents for mental support",
+            "Talk to random plants for tips",
+            "Forget your coffee",
+            "Get a sweet treat after the exam"
+          ],
+          a: 2 // Correct answer is now index 2 ("Forget your coffee")
+        }
+      ],
+      hWrap: null, // HTML quiz container
+      hQn: null, // HTML question wrapper
+      hAns: null, // HTML answers wrapper
+      now: 0, // current question
+      score: 0, // current score
+
+      init: function() {
+        quiz.hWrap = document.getElementById("quizWrap");
+        quiz.hQn = document.createElement("div");
+        quiz.hQn.id = "quizQn";
+        quiz.hWrap.appendChild(quiz.hQn);
+
+        quiz.hAns = document.createElement("div");
+        quiz.hAns.id = "quizAns";
+        quiz.hWrap.appendChild(quiz.hAns);
+
+        quiz.draw();
+      },
+
+      draw: function() {
+        quiz.hQn.innerHTML = quiz.data[quiz.now].q;
+        quiz.hAns.innerHTML = "";
+        for (let i in quiz.data[quiz.now].o) {
+          let radio = document.createElement("input");
+          radio.type = "radio";
+          radio.name = "quiz";
+          radio.id = "quizo" + i;
+          quiz.hAns.appendChild(radio);
+          let label = document.createElement("label");
+          label.innerHTML = quiz.data[quiz.now].o[i];
+          label.setAttribute("for", "quizo" + i);
+          label.dataset.idx = i;
+          label.addEventListener("click", function() {quiz.select(label);});
+          quiz.hAns.appendChild(label);
+        }
+      },
+
+      select: function(option) {
+        let all = quiz.hAns.getElementsByTagName("label");
+        for (let label of all) {
+          label.removeEventListener("click", quiz.select);
+        }
+
+        let correct = option.dataset.idx == quiz.data[quiz.now].a;
+        if (correct) {
+          quiz.score++;
+          option.classList.add("correct");
+          quiz.hQn.innerHTML = "Congrats! You are ready to go to the earth.";
+          quiz.hAns.innerHTML = "";
+        } else {
+          option.classList.add("wrong");
+          quiz.hQn.innerHTML = "You are not ready. Looks like you need to watch the video again.";
+          quiz.hAns.innerHTML = "";
+
+          // Create "Watch Video Again" button
+          let btn = document.createElement("button");
+          btn.textContent = "Let's try this again";
+          btn.style.width = "200px"; // Set a shorter width
+          btn.style.fontSize = "18px";
+          btn.style.padding = "10px 20px";
+          btn.style.marginLeft = "200px";
+          btn.style.borderRadius = "8px";
+          btn.style.cursor = "pointer";
+          btn.onclick = function() {
+            window.location.href = 'index.html';
+          };
+          quiz.hAns.appendChild(btn);
+        }
+      },
+      reset: function() {
+        quiz.now = 0;
+        quiz.score = 0;
+        quiz.draw();
+      }
+    };
+
+    window.addEventListener("load", quiz.init);
+  </script>
 </body>
 </html>
