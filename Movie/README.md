@@ -17,7 +17,7 @@ We began by brainstorming various "how-to" ideas and ultimately decided on the h
 Each step was broken down into relatable moments — such as procrastinating, panic-calling parents, last-minute cramming, and emotional breakdowns — all dramatized with an alien twist.
 
 **Group Roles:**
-- **Alien Character**: Jania
+- **Alien Character / Website Design**: Jania
 - **Filming / Colorist**: Nomundari
 - **Sound Engineer**: Guli
 - **Alien Friend / Narrator / Editing**: Amelia
