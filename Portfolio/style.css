@@ -1,0 +1,148 @@
+@font-face {
+  font-family: 'computer';
+  src: url('ccn.ttf') format('truetype');
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "computer", sans-serif;
+  background-image: url('Jania Jones.png'); /* Replace with your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #ffffff;
+  padding: 40px;
+  height: 100vh;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 10px;
+}
+
+/* CSS */
+.button-2 {
+  position: absolute;
+  background-color: transparent;
+  border-radius: 8px;
+  border-width: 0;
+  color: #333333;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "computer";
+  font-weight: 500;
+  color: #fff4f9;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 10px 12px;
+  text-align: center;
+  transition: all 200ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.home{
+  font-size: 45px;
+  top: 30px;
+  right: 350px;
+}
+
+.nav1{
+  font-size: 45px;
+  top: 30px;
+  right: 200px;
+}
+
+.nav2{
+  font-size: 45px;
+  top: 30px;
+  right: 50px;
+}
+
+.proj1{
+  font-size: 40px;
+  top: 250px;
+  left: 75px;
+  color: #6d6e71;
+}
+
+.proj2{
+  font-size: 40px;
+  top: 250px;
+  left: 225px;
+  color: #6d6e71;
+}
+
+.proj3{
+  font-size: 40px;
+  top: 400px;
+  left: 40px;
+  color: #6d6e71;
+}
+
+.proj4{
+  font-size: 40px;
+  top: 400px;
+  left: 240px;
+  color: #6d6e71;
+}
+
+.expand{
+  font-size: 40px;
+  top: 150px;
+  right: 170px;
+  visibility: hidden;
+}
+
+.proja{
+  visibility: hidden;
+  font-size: 50px;
+  bottom: 330px;
+  left: 140px;
+  color: #6d6e71;
+  background-color: #abdbd9;
+}
+
+.projb{
+  visibility: hidden;
+  font-size: 30px;
+  bottom: 325px;
+  left: 450px;
+  color: #6d6e71;
+  padding: 5px 6px;
+  background-color: #abdbd9;
+}
+
+.projc{
+  visibility: hidden;
+  font-size: 30px;
+  bottom: 325px;
+  left: 825px;
+  padding: 5px 6px;
+  color: #6d6e71;
+  background-color: #abdbd9;
+}
+
+.projd{
+  visibility: hidden;
+  font-size: 30px;
+  bottom: 325px;
+  right: 140px;
+  padding: 5px 6px;
+  color: #6d6e71;
+  background-color: #abdbd9;
+}
