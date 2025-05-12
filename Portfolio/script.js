@@ -35,5 +35,5 @@ function openProj(){
   document.querySelector('.projc').style.visibility = 'visible';
   document.querySelector('.projd').style.visibility = 'visible';
   document.querySelector('.expand').style.visibility = 'hidden';
-  document.body.style.backgroundImage = "url('projects.png')"; 
+  document.body.style.backgroundImage = "url('newProj.png')"; 
 }
